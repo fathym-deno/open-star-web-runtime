@@ -2,8 +2,8 @@ import { redirectRequest } from '@fathym/common';
 import { EaCSourceConnectionAsCode } from '@fathym/eac';
 import { loadEaCSvc, waitForStatus } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@o-biotech/atomic';
-import { OpenBiotechWebState } from '../../../../../../src/state/OpenBiotechWebState.ts';
+import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@fathym/atomic';
+import { OpenStarWebState } from '../../../../../../src/state/OpenStarWebState.ts';
 import GitHubAccessAction from '../../../../../islands/molecules/GitHubAccessAction.tsx';
 import DeleteAction from '../../../../../islands/molecules/DeleteAction.tsx';
 
@@ -14,7 +14,7 @@ export type EaCSourceConnectionsPageData = {
 };
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   EaCSourceConnectionsPageData
 > = {
   GET(_, ctx) {

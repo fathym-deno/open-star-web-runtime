@@ -1,11 +1,11 @@
 import { EaCRuntimeHandlerResult } from '@fathym/eac/runtime';
-import { OpenBiotechWebAPIState } from '../../../../src/api/OpenBiotechWebAPIState.ts';
+import { OpenStarWebAPIState } from '../../../../src/api/OpenStarWebAPIState.ts';
 import {
   StandardWebSocketClient,
   WebSocketClient,
 } from 'https://deno.land/x/websocket@v0.1.4/mod.ts';
 
-export const handler: EaCRuntimeHandlerResult<OpenBiotechWebAPIState> = {
+export const handler: EaCRuntimeHandlerResult<OpenStarWebAPIState> = {
   async GET(_req, _ctx) {
     const negotiation = await fetch(
       `https://fr1-iot-devices-flow.azurewebsites.net/api/negotiate`,

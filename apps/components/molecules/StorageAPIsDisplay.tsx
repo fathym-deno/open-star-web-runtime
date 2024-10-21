@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { Action, CopyInput, Display } from '@o-biotech/atomic';
+import { Action, CopyInput, Display } from '@fathym/atomic';
 import APIDevelopForm from '../../islands/organisms/data/api-develop-form.tsx';
 
 export const IsIsland = true;
@@ -49,7 +49,7 @@ export function StorageAPIsDisplay(props: StorageAPIsDisplayProps) {
               timeframe, in CSV, JSONLines, and JSON format.
             </p>
 
-            <APIDevelopForm apiPath='/api/o-biotech/data/cold/execute' // jwt={jwt}
+            <APIDevelopForm apiPath='/api/o/data/cold/execute' // jwt={jwt}
             />
 
             <div class='w-full mb-8 px-8'>
@@ -57,7 +57,7 @@ export function StorageAPIsDisplay(props: StorageAPIsDisplayProps) {
 
               <Action
                 class='mt-2 text-center'
-                href={`/api/o-biotech/data/cold/execute?resultType=csv&download=true&Authorization=${jwt}`}
+                href={`/api/o/data/cold/execute?resultType=csv&download=true&Authorization=${jwt}`}
                 target='blank'
                 data-eac-bypass-base
               >
@@ -76,7 +76,7 @@ export function StorageAPIsDisplay(props: StorageAPIsDisplayProps) {
               allowing for the development of complex data management downstream.
             </p>
 
-            <APIDevelopForm apiPath='/api/o-biotech/data/warm/explorer' // jwt={jwt}
+            <APIDevelopForm apiPath='/api/o/data/warm/explorer' // jwt={jwt}
             />
 
             <div class='w-full mb-8 px-8'>
@@ -100,7 +100,7 @@ export function StorageAPIsDisplay(props: StorageAPIsDisplayProps) {
               create custom data ingestion and processing logic.
             </p>
 
-            <APIDevelopForm apiPath='/api/o-biotech/data/hot/connect' // jwt={jwt}
+            <APIDevelopForm apiPath='/api/o/data/hot/connect' // jwt={jwt}
             />
 
             <div class='w-full mb-8 px-8'>

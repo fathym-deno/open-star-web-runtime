@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { Action, ActionGroup, classSet, Input } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet, Input } from '@fathym/atomic';
 import { callToActionStyles } from '../../styles/actions.tsx';
 
 export type APIsFormProps = JSX.HTMLAttributes<HTMLFormElement> & {
@@ -14,7 +14,7 @@ export function APIsForm(props: APIsFormProps) {
   return (
     <form
       method='post'
-      action='/api/o-biotech/eac/iot/data-apis'
+      action='/api/o/eac/iot/data-apis'
       data-eac-bypass-base
       {...props}
       class={classSet(
@@ -49,7 +49,7 @@ export function APIsForm(props: APIsFormProps) {
             for='device'
             class='block uppercase tracking-wide font-bold mb-0 text-xl'
           >
-            Open Biotech Data APIs
+            Open * Data APIs
           </label>
 
           <p class='block text-md mb-8'>

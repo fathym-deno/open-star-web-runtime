@@ -2,11 +2,11 @@ import { redirectRequest } from '@fathym/common';
 import { EaCIoTAsCode, EaCLicenseStripeDetails } from '@fathym/eac';
 import { EaCStatusProcessingTypes, loadEaCSvc } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@o-biotech/atomic';
+import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@fathym/atomic';
 import { setupEaCIoTFlow } from '../../../../../src/eac/setupEaCIoTFlow.ts';
-import { OpenBiotechEaC } from '../../../../../src/eac/OpenBiotechEaC.ts';
+import { OpenStarEaC } from '../../../../../src/eac/OpenStarEaC.ts';
 import ResourceGroupIoTSettings from '../../../../islands/organisms/cloud/iot/res-group-iot-settings.tsx';
-import { OpenBiotechWebState } from '../../../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarWebState } from '../../../../../src/state/OpenStarWebState.ts';
 
 export type EaCIoTSettingsPageData = {
   deviceKeys: Record<string, string>;
@@ -34,7 +34,7 @@ export type EaCIoTSettingsPageData = {
 };
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   EaCIoTSettingsPageData
 > = {
   async GET(_, ctx) {
@@ -62,7 +62,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const connsReq: OpenBiotechEaC = {
+    const connsReq: OpenStarEaC = {
       EnterpriseLookup: ctx.State.EaC!.EnterpriseLookup!,
       Clouds: {
         [data.manageCloudLookup]: {
@@ -172,7 +172,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const commitResp = await eacSvc.Commit<OpenBiotechEaC>(saveEaC, 60);
+    const commitResp = await eacSvc.Commit<OpenStarEaC>(saveEaC, 60);
 
     const status = await eacSvc.Status(
       commitResp.EnterpriseLookup,

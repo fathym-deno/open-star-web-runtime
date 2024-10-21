@@ -2,12 +2,12 @@ import { EaCSourceConnectionDetails } from '@fathym/eac';
 import { loadEaCSvc, waitForStatus } from '@fathym/eac/api';
 import { UserOAuthConnection } from '@fathym/eac/oauth.ts';
 import { EaCRuntimeHandler } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../state/OpenBiotechWebState.ts';
+import { OpenStarWebState } from '../state/OpenStarWebState.ts';
 
 export function establishGitHubAppSourceConnMiddleware(
   providerLookup: string,
   oAuthKvLookup: string,
-): EaCRuntimeHandler<OpenBiotechWebState> | undefined {
+): EaCRuntimeHandler<OpenStarWebState> | undefined {
   return async (_req, ctx) => {
     const resp = await ctx.Next();
 

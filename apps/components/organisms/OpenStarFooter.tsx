@@ -1,9 +1,9 @@
-import { classSet, Footer, FooterProps } from '@o-biotech/atomic';
+import { classSet, Footer, FooterProps } from '@fathym/atomic';
 
-export function BiotechFooter(props: FooterProps) {
+export function OpenStarFooter(props: FooterProps) {
   return (
     <Footer
-      companyName='Fathym OpenBiotech'
+      companyName='Fathym OpenStar'
       companyDescription='Deliver Biotech applications with ease, share with the masses.'
       class={classSet(['![&_a]:text-white'], props)}
       nav={[

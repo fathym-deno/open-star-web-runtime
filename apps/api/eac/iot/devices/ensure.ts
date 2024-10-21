@@ -1,10 +1,10 @@
 import { redirectRequest } from '@fathym/common';
 import { EaCStatusProcessingTypes, loadEaCSvc, waitForStatus } from '@fathym/eac/api';
 import { EaCRuntimeHandlers } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../../../../../src/state/OpenBiotechWebState.ts';
-import { OpenBiotechEaC } from '../../../../../src/eac/OpenBiotechEaC.ts';
+import { OpenStarWebState } from '../../../../../src/state/OpenStarWebState.ts';
+import { OpenStarEaC } from '../../../../../src/eac/OpenStarEaC.ts';
 
-export const handler: EaCRuntimeHandlers<OpenBiotechWebState> = {
+export const handler: EaCRuntimeHandlers<OpenStarWebState> = {
   async POST(req, ctx) {
     const formData = await req.formData();
 
@@ -18,7 +18,7 @@ export const handler: EaCRuntimeHandlers<OpenBiotechWebState> = {
 
     const isIoTEdge = !!(formData.get('isIoTEdge') as string);
 
-    const eac: OpenBiotechEaC = {
+    const eac: OpenStarEaC = {
       EnterpriseLookup: ctx.State.EaC!.EnterpriseLookup,
       IoT: {
         [iotLookup]: {
@@ -43,7 +43,7 @@ export const handler: EaCRuntimeHandlers<OpenBiotechWebState> = {
 
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const commitResp = await eacSvc.Commit<OpenBiotechEaC>(eac, 60 * 30);
+    const commitResp = await eacSvc.Commit<OpenStarEaC>(eac, 60 * 30);
 
     const status = await waitForStatus(
       eacSvc,

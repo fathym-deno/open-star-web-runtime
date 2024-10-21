@@ -4,18 +4,18 @@ import * as djwt from 'https://deno.land/x/djwt@v3.0.0/mod.ts';
 import { loadEaCSvc } from '@fathym/eac/api';
 import { IoCContainer } from 'https://deno.land/x/fathym_ioc@v0.0.10/src/ioc/ioc.ts';
 
-export default class OpenBiotechLicensingPlugin implements EaCRuntimePlugin {
+export default class OpenStarLicensingPlugin implements EaCRuntimePlugin {
   constructor() {}
 
   public Setup(_config: EaCRuntimeConfig): Promise<EaCRuntimePluginConfig> {
     const pluginConfig: EaCRuntimePluginConfig = {
-      Name: 'OpenBiotechLicensingPlugin',
+      Name: 'OpenStarLicensingPlugin',
       EaC: {
         Applications: {
           licensingApi: {
             Details: {
-              Name: 'Open Biotech Licensing API',
-              Description: 'The licensing API for Open Biotech.',
+              Name: 'Open * Licensing API',
+              Description: 'The licensing API for Open *.',
             },
             ModifierResolvers: {},
             Processor: {
@@ -29,8 +29,8 @@ export default class OpenBiotechLicensingPlugin implements EaCRuntimePlugin {
           'o-biotech': {
             DatabaseLookup: 'o-biotech',
             Details: {
-              Name: 'OpenBiotech',
-              Description: 'The main access license for OpenBiotech',
+              Name: 'OpenStar',
+              Description: 'The main access license for OpenStar',
               Enabled: true,
               PublishableKey: Deno.env.get('STRIPE_PUBLISHABLE_KEY')!,
               SecretKey: Deno.env.get('STRIPE_SECRET_KEY')!,

@@ -7,27 +7,27 @@ import {
   waitForStatus,
 } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { EaCManageForm, EnterpriseManagementItem } from '@o-biotech/atomic';
-import { OpenBiotechWebState } from '../../../../src/state/OpenBiotechWebState.ts';
+import { EaCManageForm, EnterpriseManagementItem } from '@fathym/atomic';
+import { OpenStarWebState } from '../../../../src/state/OpenStarWebState.ts';
 import CreateEaCHero from '../../../components/organisms/heros/CreateEaCHero.tsx';
-import { OpenBiotechEaC } from '../../../../src/eac/OpenBiotechEaC.ts';
+import { OpenStarEaC } from '../../../../src/eac/OpenStarEaC.ts';
 
 export type EnterprisesPageData = {
-  currentEaC?: OpenBiotechEaC;
+  currentEaC?: OpenStarEaC;
 
   enterprises: UserEaCRecord[];
 
-  manageEaC?: OpenBiotechEaC;
+  manageEaC?: OpenStarEaC;
 };
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   EnterprisesPageData
 > = {
   async GET(_, ctx) {
     const manageEaCLookup = ctx.Params.entLookup!;
 
-    let manageEaC: OpenBiotechEaC | undefined = undefined;
+    let manageEaC: OpenStarEaC | undefined = undefined;
 
     if (manageEaCLookup) {
       const parentEaCSvc = await loadEaCSvc();
@@ -126,7 +126,7 @@ export default function Enterprises({ Data }: PageProps<EnterprisesPageData>) {
       />
 
       <EaCManageForm
-        action='/api/o-biotech/eac'
+        action='/api/o/eac'
         data-eac-bypass-base
         entLookup={Data.manageEaC?.EnterpriseLookup}
         entName={Data.manageEaC?.Details?.Name || undefined}

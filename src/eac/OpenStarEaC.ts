@@ -7,7 +7,7 @@ import {
   EverythingAsCodeSources,
 } from '@fathym/eac';
 
-export type OpenBiotechEaC =
+export type OpenStarEaC =
   & EverythingAsCodeClouds
   & EverythingAsCodeGitHub
   & EverythingAsCodeIdentity

@@ -1,15 +1,15 @@
-import { classSet } from '@o-biotech/atomic';
+import { classSet } from '@fathym/atomic';
 import { JSX } from 'preact';
 import DevicesDashboardControls from '../../islands/organisms/iot/devices-dashboard-controls.tsx';
 import { EaCDeviceAsCode } from '@fathym/eac';
 
-export type BiotechDashboardProps = {
+export type OpenStarDashboardProps = {
   devices: Record<string, EaCDeviceAsCode>;
 
   jwt: string;
 } & JSX.HTMLAttributes<HTMLDivElement>;
 
-export function BiotechDashboard(props: BiotechDashboardProps) {
+export function OpenStarDashboard(props: OpenStarDashboardProps) {
   return (
     <>
       <div {...props} class={classSet(['-:p-2 -:md:p-4'], props)}>

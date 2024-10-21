@@ -5,7 +5,7 @@ import {
   EaCCloudResourceFormatDetails,
   EaCCloudRoleAssignment,
 } from '@fathym/eac';
-import { OpenBiotechEaC } from './OpenBiotechEaC.ts';
+import { OpenStarEaC } from './OpenStarEaC.ts';
 
 export function setupEaCIoTFlow(
   entLookup: string,
@@ -19,7 +19,7 @@ export function setupEaCIoTFlow(
   gitHubOrg: string,
   gitHubRepo: string,
   gitHubUsername: string,
-): OpenBiotechEaC {
+): OpenStarEaC {
   const shortName = resGroupLookup
     .split('-')
     .map((p) => p.charAt(0))
@@ -92,7 +92,7 @@ export function setupEaCIoTFlow(
           CloudLookup: cloudLookup,
           Location: resGroupLocation,
           Name: resGroupLookup,
-          PrincipalID: '', // TODO(mcgear): Pass in user email (email used to login to OpenBiotech must match one used for Azure)
+          PrincipalID: '', // TODO(mcgear): Pass in user email (email used to login to OpenStar must match one used for Azure)
           ResourceLookup: `${resLookup}-warm`,
           ServicePrincipalID: servicePrincipalId,
           ShortName: shortName,
@@ -129,7 +129,7 @@ export function setupEaCIoTFlow(
     };
   }
 
-  const eac: OpenBiotechEaC = {
+  const eac: OpenStarEaC = {
     EnterpriseLookup: entLookup,
     Clouds: {
       [cloudLookup]: {

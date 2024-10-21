@@ -1,7 +1,7 @@
 import { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
 import { IS_BROWSER } from '@fathym/eac/runtime/browser';
-import { Action, ActionStyleTypes } from '@o-biotech/atomic';
+import { Action, ActionStyleTypes } from '@fathym/atomic';
 import { RenewIcon } from '../../../../build/iconset/icons/RenewIcon.tsx';
 
 export const IsIsland = true;
@@ -65,7 +65,7 @@ export default function DashboardDisplay(props: DashboardDisplayProps) {
     const getAuthToken = async (scope: string): Promise<void> => {
       const aadScopes = mapScope(scope);
 
-      const dataUrl = `${location.origin}/api/o-biotech/data/clouds/auth-token?scope=${
+      const dataUrl = `${location.origin}/api/o/data/clouds/auth-token?scope=${
         aadScopes.join(',')
       }`;
 

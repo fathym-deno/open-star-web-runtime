@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { Action, ActionGroup, ActionStyleTypes, classSet, CopyInput } from '@o-biotech/atomic';
+import { Action, ActionGroup, ActionStyleTypes, classSet, CopyInput } from '@fathym/atomic';
 import { callToActionStyles } from '../../styles/actions.tsx';
 
 export type APIJWTFormProps = JSX.HTMLAttributes<HTMLFormElement> & {
@@ -10,7 +10,7 @@ export function APIJWTForm(props: APIJWTFormProps) {
   return (
     <form
       method='post'
-      action='/api/o-biotech/eac/iot/data-apis-jwt'
+      action='/api/o/eac/iot/data-apis-jwt'
       data-eac-bypass-base
       {...props}
       class={classSet(
@@ -24,7 +24,7 @@ export function APIJWTForm(props: APIJWTFormProps) {
             for='device'
             class='block uppercase tracking-wide font-bold mb-0 text-xl'
           >
-            Open Biotech Data APIs
+            Open * Data APIs
           </label>
 
           <p class='block text-md mb-8'>

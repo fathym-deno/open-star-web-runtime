@@ -1,6 +1,6 @@
 import { ComponentChildren } from 'preact';
 import { useRef, useState } from 'preact/hooks';
-import { Action, ActionStyleTypes, Input, InputProps, Select } from '@o-biotech/atomic';
+import { Action, ActionStyleTypes, Input, InputProps, Select } from '@fathym/atomic';
 import GitHubAccessAction from '../../../molecules/GitHubAccessAction.tsx';
 
 export const IsIsland = true;
@@ -49,7 +49,7 @@ export default function HotFlowInput(props: HotFlowInputProps) {
               href='https://github.com/apps/open-biotech-web-manager'
               target='_blank'
             >
-              OpenBiotech App
+              OpenStar App
             </Action>
           </p>
         </div>

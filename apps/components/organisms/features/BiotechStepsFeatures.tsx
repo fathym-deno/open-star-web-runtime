@@ -1,4 +1,4 @@
-import { Action, ActionGroup, classSet, FeaturesProps, StepsFeatures } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet, FeaturesProps, StepsFeatures } from '@fathym/atomic';
 import { callToActionStyles } from '../../styles/actions.tsx';
 import { SetupPhaseTypes } from '../../../../src/state/SetupPhaseTypes.ts';
 import { ChevronRightIcon } from '../../../../build/iconset/icons/ChevronRightIcon.tsx';

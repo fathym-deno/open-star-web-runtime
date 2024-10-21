@@ -4,7 +4,7 @@ import { IoCContainer } from '@fathym/ioc';
 import { isGitHubAppSourceConnectionModifierDetails } from './GitHubAppSourceConnectionModifierDetails.ts';
 import { isCurrentEaCModifierDetails } from './CurrentEaCModifierDetails.ts';
 
-export class DefaultOpenBiotechWebModifierResolver implements ModifierHandlerResolver {
+export class DefaultOpenStarWebModifierResolver implements ModifierHandlerResolver {
   public async Resolve(ioc: IoCContainer, modifier: EaCModifierAsCode) {
     let toResolveName: string = '';
 

@@ -1,5 +1,5 @@
 import { ComponentChildren, JSX } from 'preact';
-import { Action } from '@o-biotech/atomic';
+import { Action } from '@fathym/atomic';
 import { EaCStatus } from '@fathym/eac/api';
 import { DeleteIcon } from '../../../build/iconset/icons/DeleteIcon.tsx';
 

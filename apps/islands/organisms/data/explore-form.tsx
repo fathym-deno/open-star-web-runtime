@@ -1,7 +1,7 @@
 import { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
 import { IS_BROWSER } from '@fathym/eac/runtime/browser';
-import { Action, ActionGroup, classSet, Input } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet, Input } from '@fathym/atomic';
 import { callToActionStyles } from '../../../components/styles/actions.tsx';
 import DashboardDisplay from './dashboard-display.tsx';
 
@@ -56,7 +56,7 @@ export default function DataExploreForm(props: DataExploreFormProps) {
     const getAuthToken = async (scope: string): Promise<void> => {
       const aadScopes = mapScope(scope);
 
-      const dataUrl = `${location.origin}/api/o-biotech/data/clouds/auth-token?scope=${
+      const dataUrl = `${location.origin}/api/o/data/clouds/auth-token?scope=${
         aadScopes.join(',')
       }`;
 
@@ -87,7 +87,7 @@ export default function DataExploreForm(props: DataExploreFormProps) {
   return (
     <form
       method='post'
-      action='/api/o-biotech/eac/data/explore'
+      action='/api/o/eac/data/explore'
       data-eac-bypass-base
       {...props}
       class={classSet(['-:w-full -:mx-auto -:p-3 -:mt-8'], props)}

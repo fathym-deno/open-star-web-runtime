@@ -1,5 +1,5 @@
 import { ComponentChildren } from 'preact';
-import { StepsFeatures, StepsFeaturesProps } from '@o-biotech/atomic';
+import { StepsFeatures, StepsFeaturesProps } from '@fathym/atomic';
 import { DeviceForm } from '../devices/device.form.tsx';
 import DevicesDashboardForm from '../devices/dashboards.form.tsx';
 import { DevicesPhaseTypes } from '../../../../src/state/DevicesPhaseTypes.ts';

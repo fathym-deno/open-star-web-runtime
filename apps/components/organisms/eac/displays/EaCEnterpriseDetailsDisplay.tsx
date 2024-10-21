@@ -1,6 +1,6 @@
 import { EaCEnterpriseDetails } from '@fathym/eac';
 import { UserEaCRecord } from '@fathym/eac/api';
-import { Action, ActionStyleTypes } from '@o-biotech/atomic';
+import { Action, ActionStyleTypes } from '@fathym/atomic';
 import { EditIcon } from '../../../../../build/iconset/icons/EditIcon.tsx';
 import { AddIcon } from '../../../../../build/iconset/icons/AddIcon.tsx';
 

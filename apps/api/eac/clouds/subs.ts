@@ -2,16 +2,16 @@ import { redirectRequest } from '@fathym/common';
 import { EaCCloudDetails } from '@fathym/eac';
 import { EaCStatusProcessingTypes, loadEaCSvc, waitForStatus } from '@fathym/eac/api';
 import { EaCRuntimeHandlers } from '@fathym/eac/runtime';
-import { OpenBiotechEaC } from '../../../../src/eac/OpenBiotechEaC.ts';
-import { OpenBiotechWebState } from '../../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarEaC } from '../../../../src/eac/OpenStarEaC.ts';
+import { OpenStarWebState } from '../../../../src/state/OpenStarWebState.ts';
 
-export const handler: EaCRuntimeHandlers<OpenBiotechWebState> = {
+export const handler: EaCRuntimeHandlers<OpenStarWebState> = {
   async POST(req, ctx) {
     const formData = await req.formData();
 
     const cloudLookup = (formData.get('cloudLookup') as string) || crypto.randomUUID();
 
-    const eac: OpenBiotechEaC = {
+    const eac: OpenStarEaC = {
       EnterpriseLookup: ctx.State.EaC!.EnterpriseLookup,
       Clouds: {
         [cloudLookup]: {

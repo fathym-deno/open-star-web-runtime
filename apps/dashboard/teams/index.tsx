@@ -1,7 +1,7 @@
 import { loadEaCSvc } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../../../src/state/OpenBiotechWebState.ts';
-import { Display, DisplayStyleTypes, Hero, HeroStyleTypes } from '@o-biotech/atomic';
+import { OpenStarWebState } from '../../../src/state/OpenStarWebState.ts';
+import { Display, DisplayStyleTypes, Hero, HeroStyleTypes } from '@fathym/atomic';
 import InviteTeamMemberForm from '../../islands/organisms/team/invite-team-member.tsx';
 
 interface TeamsPageData {
@@ -9,7 +9,7 @@ interface TeamsPageData {
 }
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   TeamsPageData
 > = {
   GET: async (_req, ctx) => {

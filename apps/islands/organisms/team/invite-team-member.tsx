@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { Action, ActionGroup, classSet, Input } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet, Input } from '@fathym/atomic';
 import { callToActionStyles } from '../../../components/styles/actions.tsx';
 
 // May not be necessary to be an island
@@ -13,7 +13,7 @@ export default function InviteTeamMemberForm(props: InviteTeamMemberFormProps) {
   return (
     <form
       method='post'
-      action='/api/o-biotech/eac/users'
+      action='/api/o/eac/users'
       data-eac-bypass-base
       {...props}
       class={classSet(['-:w-full -:mx-auto -:p-3 -:mt-8'], props)}

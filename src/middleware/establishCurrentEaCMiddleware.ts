@@ -1,10 +1,10 @@
 import { loadEaCSvc } from '@fathym/eac/api';
 import { EaCRuntimeHandler } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../state/OpenBiotechWebState.ts';
-import { OpenBiotechEaC } from '../eac/OpenBiotechEaC.ts';
+import { OpenStarWebState } from '../state/OpenStarWebState.ts';
+import { OpenStarEaC } from '../eac/OpenStarEaC.ts';
 import { loadJwtConfig } from '@fathym/eac/mod.ts';
 
-export function establishCurrentEaCMiddleware(): EaCRuntimeHandler<OpenBiotechWebState> {
+export function establishCurrentEaCMiddleware(): EaCRuntimeHandler<OpenStarWebState> {
   return async (_req, ctx) => {
     ctx.State.OBiotechKV = await ctx.Runtime.IoC.Resolve(Deno.Kv, 'o-biotech');
 
@@ -14,7 +14,7 @@ export function establishCurrentEaCMiddleware(): EaCRuntimeHandler<OpenBiotechWe
       'Current',
       'EnterpriseLookup',
     ]);
-    let eac: OpenBiotechEaC | undefined = undefined;
+    let eac: OpenStarEaC | undefined = undefined;
 
     const [_header, payload] = await loadJwtConfig().Decode<{
       EnterpriseLookup: string;

@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { Action, ActionGroup, classSet, Input } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet, Input } from '@fathym/atomic';
 import { EaCLicenseAsCode } from '@fathym/eac';
 import { callToActionStyles } from '../../styles/actions.tsx';
 import HotFlowInput from '../../../islands/organisms/cloud/iot/hot-flow-input.tsx';

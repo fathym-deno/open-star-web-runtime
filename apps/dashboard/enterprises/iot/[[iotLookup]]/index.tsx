@@ -8,9 +8,9 @@ import {
   EaCManageIoTForm,
   Hero,
   HeroStyleTypes,
-} from '@o-biotech/atomic';
-import { OpenBiotechWebState } from '../../../../../src/state/OpenBiotechWebState.ts';
-import { OpenBiotechEaC } from '../../../../../src/eac/OpenBiotechEaC.ts';
+} from '@fathym/atomic';
+import { OpenStarWebState } from '../../../../../src/state/OpenStarWebState.ts';
+import { OpenStarEaC } from '../../../../../src/eac/OpenStarEaC.ts';
 import DeleteAction from '../../../../islands/molecules/DeleteAction.tsx';
 
 export type EaCIoTPageData = {
@@ -28,7 +28,7 @@ export type EaCIoTPageData = {
 };
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   EaCIoTPageData
 > = {
   GET(_, ctx) {
@@ -80,7 +80,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const iotLookup = formData.get('iotLookup') as string;
 
-    const saveEaC: OpenBiotechEaC = {
+    const saveEaC: OpenStarEaC = {
       EnterpriseLookup: formData.get('entLookup') as string,
       IoT: {
         [iotLookup]: {
@@ -96,7 +96,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const commitResp = await eacSvc.Commit<OpenBiotechEaC>(saveEaC, 60);
+    const commitResp = await eacSvc.Commit<OpenStarEaC>(saveEaC, 60);
 
     const status = await waitForStatus(
       eacSvc,

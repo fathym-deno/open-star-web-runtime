@@ -1,23 +1,23 @@
 import { UserEaCLicense, UserEaCRecord } from '@fathym/eac/api';
 import { SetupPhaseTypes } from './SetupPhaseTypes.ts';
-import { OpenBiotechEaC } from '../eac/OpenBiotechEaC.ts';
+import { OpenStarEaC } from '../eac/OpenStarEaC.ts';
 import { CloudPhaseTypes } from './CloudPhaseTypes.ts';
 import { DevicesPhaseTypes } from './DevicesPhaseTypes.ts';
 import { DataPhaseTypes } from './DataPhaseTypes.ts';
 
-export type OpenBiotechWebState =
+export type OpenStarWebState =
   & {
-    Cloud: OpenBiotechCloudState;
+    Cloud: OpenStarCloudState;
 
-    Data: OpenBiotechDataState;
+    Data: OpenStarDataState;
 
-    Devices: OpenBiotechDevicesState;
+    Devices: OpenStarDevicesState;
 
-    EaC?: OpenBiotechEaC;
+    EaC?: OpenStarEaC;
 
     EaCJWT?: string;
 
-    GitHub?: OpenBiotechGitHubState;
+    GitHub?: OpenStarGitHubState;
 
     OBiotechKV: Deno.Kv;
 
@@ -32,7 +32,7 @@ export type OpenBiotechWebState =
   //   & WithSession
   & Record<string, unknown>;
 
-export type OpenBiotechCloudState = {
+export type OpenStarCloudState = {
   AzureAccessToken?: string;
 
   CloudLookup?: string;
@@ -50,7 +50,7 @@ export type OpenBiotechCloudState = {
   };
 };
 
-export type OpenBiotechDevicesState = {
+export type OpenStarDevicesState = {
   IoTLookup?: string;
 
   JWT: string;
@@ -58,10 +58,10 @@ export type OpenBiotechDevicesState = {
   Phase: DevicesPhaseTypes;
 };
 
-export type OpenBiotechDataState = {
+export type OpenStarDataState = {
   Phase: DataPhaseTypes;
 };
 
-export type OpenBiotechGitHubState = {
+export type OpenStarGitHubState = {
   Username: string;
 };

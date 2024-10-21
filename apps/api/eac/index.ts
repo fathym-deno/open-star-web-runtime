@@ -6,8 +6,8 @@ import {
   waitForStatusWithFreshJwt,
 } from '@fathym/eac/api';
 import { EaCRuntimeHandlers } from '@fathym/eac/runtime';
-import { OpenBiotechEaC } from '../../../src/eac/OpenBiotechEaC.ts';
-import { OpenBiotechWebState } from '../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarEaC } from '../../../src/eac/OpenStarEaC.ts';
+import { OpenStarWebState } from '../../../src/state/OpenStarWebState.ts';
 
 export default {
   GET(_req, ctx) {
@@ -17,7 +17,7 @@ export default {
   async POST(req, ctx) {
     const formData = await req.formData();
 
-    const saveEaC: OpenBiotechEaC = {
+    const saveEaC: OpenStarEaC = {
       EnterpriseLookup: formData.get('entLookup') as string | undefined,
       Details: {
         Name: formData.get('name') as string,
@@ -36,9 +36,9 @@ export default {
 
       const eacSvc = await loadEaCSvc(jwt.Token);
 
-      eacCall = eacSvc.Commit<OpenBiotechEaC>(saveEaC, 60);
+      eacCall = eacSvc.Commit<OpenStarEaC>(saveEaC, 60);
     } else {
-      eacCall = parentEaCSvc.Create<OpenBiotechEaC>(
+      eacCall = parentEaCSvc.Create<OpenStarEaC>(
         saveEaC,
         ctx.State.Username,
         60,
@@ -69,4 +69,4 @@ export default {
       );
     }
   },
-} as EaCRuntimeHandlers<OpenBiotechWebState>;
+} as EaCRuntimeHandlers<OpenStarWebState>;

@@ -2,15 +2,15 @@ import { JSX } from 'preact';
 import { EaCDeviceAsCode } from '@fathym/eac';
 import { UserEaCRecord } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { EaCManageForm } from '@o-biotech/atomic';
+import { EaCManageForm } from '@fathym/atomic';
 import { SetupPhaseTypes } from '../../src/state/SetupPhaseTypes.ts';
 import CloudConnectHero from '../components/organisms/heros/CloudConnectHero.tsx';
 import ConnectDevicesHero from '../components/organisms/heros/ConnectDevicesHero.tsx';
 import CreateEaCHero from '../components/organisms/heros/CreateEaCHero.tsx';
 import SetupDataHero from '../components/organisms/heros/SetupDataHero.tsx';
 import { BiotechStepsFeatures } from '../components/organisms/features/BiotechStepsFeatures.tsx';
-import { OpenBiotechWebState } from '../../src/state/OpenBiotechWebState.ts';
-import { BiotechDashboard } from '../components/organisms/BiotechDashboard.tsx';
+import { OpenStarWebState } from '../../src/state/OpenStarWebState.ts';
+import { OpenStarDashboard } from '../components/organisms/OpenStarDashboard.tsx';
 
 interface HomePageData {
   Devices?: Record<string, EaCDeviceAsCode>;
@@ -25,7 +25,7 @@ interface HomePageData {
 }
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   HomePageData
 > = {
   GET: (_req, ctx) => {
@@ -57,7 +57,7 @@ export default function Index({ Data }: PageProps<HomePageData>) {
 
     initialSteps = (
       <EaCManageForm
-        action='/api/o-biotech/eac'
+        action='/api/o/eac'
         data-eac-bypass-base
         hideTitle={true}
       />
@@ -72,7 +72,7 @@ export default function Index({ Data }: PageProps<HomePageData>) {
         explainerData.Title = 'Cloud Configuration';
 
         explainerData.Descriptions = [
-          `Establish an Azure cloud connection so OpenBiotech can set up a complete IoT cloud infrastructure for collecting, processing, exploring and sharing device data.`,
+          `Establish an Azure cloud connection so OpenStar can set up a complete IoT cloud infrastructure for collecting, processing, exploring and sharing device data.`,
         ];
 
         explainerData.VideoURL = 'https://www.youtube.com/embed/tprpd02a0mg?si=bnXDMsuj1MWdcCk4';
@@ -109,7 +109,7 @@ export default function Index({ Data }: PageProps<HomePageData>) {
               <div class='flex-none md:w-100 px-5 py-10 mx-5 md:py-10 md:px-20 md:my-10 text-2xl md:text-3xl'>
                 <h1 class='text-[#4a918e]'>Welcome to</h1>
 
-                <h1 class=''>Open Biotech</h1>
+                <h1 class=''>Open *</h1>
               </div>
 
               <div class='flex-1 px-5 py-10 mx-5 md:py-10 md:px-20 md:my-10'>
@@ -164,7 +164,7 @@ export default function Index({ Data }: PageProps<HomePageData>) {
       {explainer}
 
       {Data.SetupPhase > 2
-        ? <BiotechDashboard class='m-4' devices={Data.Devices!} jwt={Data.JWT!} />
+        ? <OpenStarDashboard class='m-4' devices={Data.Devices!} jwt={Data.JWT!} />
         : <></>}
     </>
   );

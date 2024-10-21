@@ -8,7 +8,7 @@ import {
 import { DefaultMSALProcessorHandlerResolver } from '@fathym/msal';
 import { IoCContainer } from '@fathym/ioc';
 
-export class DefaultOpenBiotechWebProcessorHandlerResolver implements ProcessorHandlerResolver {
+export class DefaultOpenStarWebProcessorHandlerResolver implements ProcessorHandlerResolver {
   public async Resolve(
     ioc: IoCContainer,
     appProcCfg: EaCApplicationProcessorConfig,

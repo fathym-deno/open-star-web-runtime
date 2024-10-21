@@ -1,8 +1,8 @@
 import { redirectRequest } from '@fathym/common';
 import { EaCRuntimeHandlers } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarWebState } from '../../../../src/state/OpenStarWebState.ts';
 
-export const handler: EaCRuntimeHandlers<OpenBiotechWebState> = {
+export const handler: EaCRuntimeHandlers<OpenStarWebState> = {
   async POST(req, ctx) {
     console.log('******************************');
     const formData = await req.formData();

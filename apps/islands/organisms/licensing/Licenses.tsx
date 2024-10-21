@@ -2,7 +2,7 @@ import { JSX } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { EaCLicenseAsCode } from '@fathym/eac';
 import { UserEaCLicense } from '@fathym/eac/api';
-import { Action, ActionGroup, ActionStyleTypes, classSet, SlideToggle } from '@o-biotech/atomic';
+import { Action, ActionGroup, ActionStyleTypes, classSet, SlideToggle } from '@fathym/atomic';
 import { loadStripe } from 'npm:@stripe/stripe-js';
 import { callToActionStyles } from '../../../components/styles/actions.tsx';
 import { RenewIcon } from '../../../../build/iconset/icons/RenewIcon.tsx';
@@ -90,7 +90,7 @@ export default function Licenses(props: LicensesProps) {
 
     setLoading(true);
 
-    const resp = await fetch('/api/o-biotech/licensing/subscribe', {
+    const resp = await fetch('/api/o/licensing/subscribe', {
       method: 'POST',
       body: JSON.stringify({
         LicenseLookup: props.licLookup,

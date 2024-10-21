@@ -2,9 +2,9 @@ import { redirectRequest } from '@fathym/common';
 import { EaCHandler } from '@fathym/eac';
 import { EaCStatusProcessingTypes, loadEaCSvc, waitForStatus } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { DisplayStyleTypes, EaCManageHandlerForm, Hero, HeroStyleTypes } from '@o-biotech/atomic';
-import { OpenBiotechWebState } from '../../../../../src/state/OpenBiotechWebState.ts';
-import { OpenBiotechEaC } from '../../../../../src/eac/OpenBiotechEaC.ts';
+import { DisplayStyleTypes, EaCManageHandlerForm, Hero, HeroStyleTypes } from '@fathym/atomic';
+import { OpenStarWebState } from '../../../../../src/state/OpenStarWebState.ts';
+import { OpenStarEaC } from '../../../../../src/eac/OpenStarEaC.ts';
 import DeleteAction from '../../../../islands/molecules/DeleteAction.tsx';
 
 export type EaCHandlersPageData = {
@@ -16,7 +16,7 @@ export type EaCHandlersPageData = {
 };
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   EaCHandlersPageData
 > = {
   GET(_, ctx) {
@@ -46,7 +46,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const handlerLookup = formData.get('handlerLookup') as string;
 
-    const saveEaC: OpenBiotechEaC = {
+    const saveEaC: OpenStarEaC = {
       EnterpriseLookup: formData.get('entLookup') as string,
       Handlers: {
         [handlerLookup]: {
@@ -58,7 +58,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const commitResp = await eacSvc.Commit<OpenBiotechEaC>(saveEaC, 60);
+    const commitResp = await eacSvc.Commit<OpenStarEaC>(saveEaC, 60);
 
     const status = await waitForStatus(
       eacSvc,

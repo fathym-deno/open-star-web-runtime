@@ -1,7 +1,7 @@
 import { EaCRuntimeHandlers } from '@fathym/eac/runtime';
-import { OpenBiotechWebAPIState } from '../../../../../src/api/OpenBiotechWebAPIState.ts';
+import { OpenStarWebAPIState } from '../../../../../src/api/OpenStarWebAPIState.ts';
 
-export const handler: EaCRuntimeHandlers<OpenBiotechWebAPIState> = {
+export const handler: EaCRuntimeHandlers<OpenStarWebAPIState> = {
   async GET(req, ctx) {
     const origin = req.headers.get('Origin') || '*';
 

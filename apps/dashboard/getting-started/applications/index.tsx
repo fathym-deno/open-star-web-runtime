@@ -1,16 +1,16 @@
 import { redirectRequest } from '@fathym/common';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@o-biotech/atomic';
+import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@fathym/atomic';
 import { ApplicationsStepsFeatures } from '../../../components/organisms/features/ApplicationsStepsFeatures.tsx';
 import { ApplicationsPhaseTypes } from '../../../../src/state/ApplicationsPhaseTypes.ts';
-import { OpenBiotechWebState } from '../../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarWebState } from '../../../../src/state/OpenStarWebState.ts';
 
 interface ApplicationsPageData {
   appsPhase: ApplicationsPhaseTypes;
 }
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   ApplicationsPageData
 > = {
   GET: (_req, ctx) => {

@@ -3,12 +3,12 @@ import { MSALPlugin } from '@fathym/msal';
 import { loadOAuth2ClientConfig } from '@fathym/eac/runtime';
 import { createOAuthHelpers } from '@fathym/common/oauth';
 
-export default class OpenBiotechMSALPlugin implements EaCRuntimePlugin {
+export default class OpenStarMSALPlugin implements EaCRuntimePlugin {
   constructor() {}
 
   public Setup(_config: EaCRuntimeConfig): Promise<EaCRuntimePluginConfig> {
     const pluginConfig: EaCRuntimePluginConfig = {
-      Name: 'OpenBiotechMSALPlugin',
+      Name: 'OpenStarMSALPlugin',
       Plugins: [
         new MSALPlugin({
           async Resolve(ioc, _processor, eac) {

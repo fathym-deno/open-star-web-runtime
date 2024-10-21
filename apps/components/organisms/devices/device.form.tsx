@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { Action, ActionGroup, classSet, Input } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet, Input } from '@fathym/atomic';
 import { callToActionStyles } from '../../styles/actions.tsx';
 
 export type DeviceFormProps = JSX.HTMLAttributes<HTMLFormElement> & {
@@ -16,7 +16,7 @@ export function DeviceForm(props: DeviceFormProps) {
   return (
     <form
       method='post'
-      action='/api/o-biotech/eac/iot/devices/ensure'
+      action='/api/o/eac/iot/devices/ensure'
       data-eac-bypass-base
       {...props}
       class={classSet(

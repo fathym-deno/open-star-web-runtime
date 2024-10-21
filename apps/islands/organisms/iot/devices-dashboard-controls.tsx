@@ -12,7 +12,7 @@ import {
   InputWrapper,
   numMaxLengthShield,
   SlideToggle,
-} from '@o-biotech/atomic';
+} from '@fathym/atomic';
 import { EaCDeviceAsCode } from '@fathym/eac';
 import HotConnect from './hot-connect.tsx';
 import { ExplorerRequest } from '@fathym/eac/api';
@@ -130,7 +130,7 @@ export default function DevicesDashboardControls(props: DevicesDashboardControls
   const loadDeviceData = async (): Promise<void> => {
     setIsLoadingData(true);
 
-    const dataUrl = `${location.origin}/api/o-biotech/data/warm/explorer`;
+    const dataUrl = `${location.origin}/api/o/data/warm/explorer`;
 
     const dataReq: ExplorerRequest = {
       Query: kqlQuery,

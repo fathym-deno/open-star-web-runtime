@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { classSet, Input } from '@o-biotech/atomic';
+import { classSet, Input } from '@fathym/atomic';
 import IoTHubKeySimulatorDisplay from '../../../islands/organisms/iot/hub-key-simulator.tsx';
 import DeviceDataFlowingContinue from '../../../islands/organisms/iot/device-data-flowing-continue.tsx';
 
@@ -17,7 +17,7 @@ export function DataFlowForm(props: DataFlowFormProps) {
   return (
     <form
       method='POST'
-      action='/api/o-biotech/eac/data/flow'
+      action='/api/o/eac/data/flow'
       data-eac-bypass-base
       {...props}
       class={classSet(

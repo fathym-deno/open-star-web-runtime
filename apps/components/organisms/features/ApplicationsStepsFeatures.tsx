@@ -5,7 +5,7 @@ import {
   classSet,
   StepsFeatures,
   StepsFeaturesProps,
-} from '@o-biotech/atomic';
+} from '@fathym/atomic';
 import { ApplicationsPhaseTypes } from '../../../../src/state/ApplicationsPhaseTypes.ts';
 import { callToActionStyles } from '../../styles/actions.tsx';
 

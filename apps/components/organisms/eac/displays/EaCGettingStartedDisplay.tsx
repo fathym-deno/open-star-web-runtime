@@ -1,4 +1,4 @@
-import { OpenBiotechEaC } from '../../../../../src/eac/OpenBiotechEaC.ts';
+import { OpenStarEaC } from '../../../../../src/eac/OpenStarEaC.ts';
 import { Checklist, ChecklistItem } from '../../../molecules/Checklist.tsx';
 import { SetupPhaseTypes } from '../../../../../src/state/SetupPhaseTypes.ts';
 import { CloudPhaseTypes } from '../../../../../src/state/CloudPhaseTypes.ts';
@@ -6,7 +6,7 @@ import { DataPhaseTypes } from '../../../../../src/state/DataPhaseTypes.ts';
 import { DevicesPhaseTypes } from '../../../../../src/state/DevicesPhaseTypes.ts';
 
 export function EaCGettingStartedDisplay(props: {
-  eac?: OpenBiotechEaC;
+  eac?: OpenStarEaC;
 
   cloudPhase?: CloudPhaseTypes;
 

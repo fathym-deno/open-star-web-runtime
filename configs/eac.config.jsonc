@@ -1,0 +1,21 @@
+{
+    "Details": {
+        "Name": "Open *",
+        "Description": "Open * Details",
+        "OpenConfig": {
+            
+        }
+      },
+      "Projects": {
+        "web":{
+            "ResolverConfigs": {
+                "open-biotech-web-runtime.azurewebsites.net": {
+                    "Hostname": "open-biotech-web-runtime.azurewebsites.net"
+                  },
+                "openstar.co": {
+                    "Hostname": "openstar.co"
+                  }
+            }
+        }
+      }
+}

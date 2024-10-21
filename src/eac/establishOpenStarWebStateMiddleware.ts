@@ -5,7 +5,7 @@ import {
 } from '@fathym/common/oauth';
 import { UserOAuthConnection, userOAuthConnExpired } from '@fathym/eac/oauth.ts';
 import { EaCRuntimeContext, EaCRuntimeHandler } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../state/OpenBiotechWebState.ts';
+import { OpenStarWebState } from '../state/OpenStarWebState.ts';
 import { SetupPhaseTypes } from '../state/SetupPhaseTypes.ts';
 import { CloudPhaseTypes } from '../state/CloudPhaseTypes.ts';
 import { DevicesPhaseTypes } from '../state/DevicesPhaseTypes.ts';
@@ -13,11 +13,11 @@ import { DataPhaseTypes } from '../state/DataPhaseTypes.ts';
 import { EaCAzureADProviderDetails, loadJwtConfig } from '@fathym/eac/mod.ts';
 import { loadEaCSvc } from '@fathym/eac/api';
 
-export function establishOpenBiotechWebStateMiddleware(): EaCRuntimeHandler<OpenBiotechWebState> {
-  return async (req, ctx: EaCRuntimeContext<OpenBiotechWebState>) => {
+export function establishOpenStarWebStateMiddleware(): EaCRuntimeHandler<OpenStarWebState> {
+  return async (req, ctx: EaCRuntimeContext<OpenStarWebState>) => {
     // const isAuthenticated = ctx.state.session.get("isMsalAuthenticated");
     // Call to get state
-    const state: OpenBiotechWebState = {
+    const state: OpenStarWebState = {
       UserEaCs: [],
       ...ctx.State,
       Phase: SetupPhaseTypes.Cloud,
@@ -190,7 +190,7 @@ export function establishOpenBiotechWebStateMiddleware(): EaCRuntimeHandler<Open
     }
 
     if (ctx.State.Username) {
-      const providerLookup = 'o-biotech-github-app';
+      const providerLookup = 'o-github-app';
 
       const provider = ctx.Runtime.EaC!.Providers![providerLookup]!;
 

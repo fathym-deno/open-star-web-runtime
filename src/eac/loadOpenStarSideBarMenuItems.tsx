@@ -1,7 +1,7 @@
 import { UserEaCRecord } from '@fathym/eac/api';
 import { SideBarMenuItem, SideBarMenuItemSettings } from '../../apps/islands/molecules/SideBar.tsx';
 import { SetupPhaseTypes } from '../state/SetupPhaseTypes.ts';
-import { OpenBiotechEaC } from './OpenBiotechEaC.ts';
+import { OpenStarEaC } from './OpenStarEaC.ts';
 import { EaCCloudsDisplay } from '../../apps/components/organisms/eac/displays/EaCCloudsDisplay.tsx';
 import { EaCEnterpriseDetailsDisplay } from '../../apps/components/organisms/eac/displays/EaCEnterpriseDetailsDisplay.tsx';
 import { EaCDevOpsActionsDisplay } from '../../apps/components/organisms/eac/displays/EaCDevOpsActionsDisplay.tsx';
@@ -15,9 +15,9 @@ import { CloudPhaseTypes } from '../state/CloudPhaseTypes.ts';
 import { DevicesPhaseTypes } from '../state/DevicesPhaseTypes.ts';
 import { DataPhaseTypes } from '../state/DataPhaseTypes.ts';
 
-export function loadOoenBiotechSideBarMenuItems(
+export function loadOpenStarSideBarMenuItems(
   phase: SetupPhaseTypes,
-  eac?: OpenBiotechEaC,
+  eac?: OpenStarEaC,
 ): SideBarMenuItem[] {
   eac = { ...(eac || {}) };
 
@@ -52,10 +52,10 @@ export function loadOoenBiotechSideBarMenuItems(
   return menuItems;
 }
 
-export function loadOoenBiotechSideBarSettings(
+export function loadOpenStarSideBarSettings(
   menuItemNames: string[],
   phase: SetupPhaseTypes,
-  eac?: OpenBiotechEaC,
+  eac?: OpenStarEaC,
   cloudPhase?: CloudPhaseTypes,
   dataPhase?: DataPhaseTypes,
   devicesPhase?: DevicesPhaseTypes,

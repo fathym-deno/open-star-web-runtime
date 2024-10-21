@@ -1,14 +1,14 @@
 import { JSX } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { IS_BROWSER } from '@fathym/eac/runtime/browser';
-import { classSet } from '@o-biotech/atomic';
+import { classSet } from '@fathym/atomic';
 import { Icon } from '@fathym/atomic-icons/browser';
 import { UserEaCRecord } from '@fathym/eac/api';
-import { loadOoenBiotechSideBarSettings } from '../../../src/eac/loadOpenBiotechSideBarMenuItems.tsx';
+import { loadOpenStarSideBarSettings } from '../../../src/eac/loadOpenStarSideBarMenuItems.tsx';
 import { CloudPhaseTypes } from '../../../src/state/CloudPhaseTypes.ts';
 import { DataPhaseTypes } from '../../../src/state/DataPhaseTypes.ts';
 import { DevicesPhaseTypes } from '../../../src/state/DevicesPhaseTypes.ts';
-import { OpenBiotechEaC } from '../../../src/eac/OpenBiotechEaC.ts';
+import { OpenStarEaC } from '../../../src/eac/OpenStarEaC.ts';
 import { SideBarMenuItem } from './SideBar.tsx';
 import { SetupPhaseTypes } from '../../../src/state/SetupPhaseTypes.ts';
 import { MenuIcon } from '../../../build/iconset/icons/MenuIcon.tsx';
@@ -24,14 +24,14 @@ export type SideBarMenuProps = {
 
   disableToggle?: boolean;
 
-  eac?: OpenBiotechEaC;
+  eac?: OpenStarEaC;
 
   menuItems: SideBarMenuItem[];
 
   phase: SetupPhaseTypes;
 
   userEaCs?: UserEaCRecord[];
-  // state: OpenBiotechWebState;
+  // state: OpenStarWebState;
 } & JSX.HTMLAttributes<HTMLDivElement>;
 
 export default function SideBarMenu(props: SideBarMenuProps) {
@@ -47,7 +47,7 @@ export default function SideBarMenu(props: SideBarMenuProps) {
     }
   };
 
-  const menuItemsSettings = loadOoenBiotechSideBarSettings(
+  const menuItemsSettings = loadOpenStarSideBarSettings(
     props.menuItems.map((menuItem) => menuItem.Name),
     props.phase,
     props.eac,

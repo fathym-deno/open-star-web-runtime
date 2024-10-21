@@ -2,9 +2,9 @@ import { respond } from '@fathym/common';
 import { EaCGitHubAppProviderDetails } from '@fathym/eac';
 import { loadOctokit } from '@fathym/eac/octokit.ts';
 import { EaCRuntimeHandlers } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarWebState } from '../../../../src/state/OpenStarWebState.ts';
 
-export const handler: EaCRuntimeHandlers<OpenBiotechWebState> = {
+export const handler: EaCRuntimeHandlers<OpenStarWebState> = {
   async GET(_req, ctx) {
     const sourceConn = ctx.State.EaC!.SourceConnections![
       `GITHUB://${ctx.State.GitHub!.Username}`

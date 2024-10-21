@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks';
-import { Action, ActionProps, ActionStyleTypes, classSet } from '@o-biotech/atomic';
+import { Action, ActionProps, ActionStyleTypes, classSet } from '@fathym/atomic';
 import { callToActionStyles } from '../../components/styles/actions.tsx';
 
 // May not be necessary to be an island

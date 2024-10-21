@@ -2,7 +2,7 @@ import { JSX } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { IS_BROWSER } from '@fathym/eac/runtime/browser';
 import * as signalR from 'npm:@microsoft/signalr@8.0.0/dist/browser/signalr.js';
-import { Action, CopyInput } from '@o-biotech/atomic';
+import { Action, CopyInput } from '@fathym/atomic';
 import { RenewIcon } from '../../../../build/iconset/icons/RenewIcon.tsx';
 import { ChevronDownIcon } from '../../../../build/iconset/icons/ChevronDownIcon.tsx';
 
@@ -37,7 +37,7 @@ export default function HotConnect(props: HotConnectProps) {
 
   const initConnection = () => {
     const conn = new signalR.HubConnectionBuilder()
-      .withUrl(`/api/o-biotech/data/hot/connect`, {
+      .withUrl(`/api/o/data/hot/connect`, {
         headers: {
           Authorization: `Bearer ${jwt}`,
         },

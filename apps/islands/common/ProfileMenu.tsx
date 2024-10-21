@@ -5,7 +5,7 @@ import {
   MenuButton,
   MenuButtonProps,
   MenuButtonStyleTypes,
-} from '@o-biotech/atomic';
+} from '@fathym/atomic';
 import { UserIcon } from '../../../build/iconset/icons/UserIcon.tsx';
 import { LogOutIcon } from '../../../build/iconset/icons/LogOutIcon.tsx';
 
@@ -41,7 +41,7 @@ export default function ProfileMenu(props: ProfileMenuProps) {
 
           {
             /* <Action
-            href='/signout?success_url=https://www.openbiotech.co/'
+            href='/signout?success_url=https://www.openstar.co/'
             class='flex-none ml-2'
             actionStyle={ActionStyleTypes.Link | ActionStyleTypes.Rounded}
           >

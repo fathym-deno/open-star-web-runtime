@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { Action, ActionGroup, classSet, Input } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet, Input } from '@fathym/atomic';
 import { callToActionStyles } from '../../styles/actions.tsx';
 
 export type DataDevelopFormProps = JSX.HTMLAttributes<HTMLFormElement>;
@@ -8,7 +8,7 @@ export function DataDevelopForm(props: DataDevelopFormProps) {
   return (
     <form
       method='post'
-      action='/api/o-biotech/eac/data/develop'
+      action='/api/o/eac/data/develop'
       data-eac-bypass-base
       {...props}
       class={classSet(

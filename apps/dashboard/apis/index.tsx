@@ -1,7 +1,7 @@
 import { loadJwtConfig } from '@fathym/eac';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@o-biotech/atomic';
-import { OpenBiotechWebState } from '../../../src/state/OpenBiotechWebState.ts';
+import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@fathym/atomic';
+import { OpenStarWebState } from '../../../src/state/OpenStarWebState.ts';
 import { StorageAPIsDisplay } from '../../components/molecules/StorageAPIsDisplay.tsx';
 
 export const IsIsland = true;
@@ -17,7 +17,7 @@ interface APIsPageData {
 }
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   APIsPageData
 > = {
   GET: async (_req, ctx) => {

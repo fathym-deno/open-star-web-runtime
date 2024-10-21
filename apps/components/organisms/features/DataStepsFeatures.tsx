@@ -1,5 +1,5 @@
 import { ComponentChildren } from 'preact';
-import { StepsFeatures, StepsFeaturesProps } from '@o-biotech/atomic';
+import { StepsFeatures, StepsFeaturesProps } from '@fathym/atomic';
 import { DataFlowForm } from '../data/flow.form.tsx';
 import DataExploreForm from '../../../islands/organisms/data/explore-form.tsx';
 import { DataPhaseTypes } from '../../../../src/state/DataPhaseTypes.ts';

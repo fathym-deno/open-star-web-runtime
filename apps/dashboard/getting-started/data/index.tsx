@@ -1,11 +1,11 @@
 import { redirectRequest } from '@fathym/common';
 import { loadEaCSvc } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@o-biotech/atomic';
+import { DisplayStyleTypes, Hero, HeroStyleTypes } from '@fathym/atomic';
 import { DataStepsFeatures } from '../../../components/organisms/features/DataStepsFeatures.tsx';
 import { DataPhaseTypes } from '../../../../src/state/DataPhaseTypes.ts';
-import { OpenBiotechEaC } from '../../../../src/eac/OpenBiotechEaC.ts';
-import { OpenBiotechWebState } from '../../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarEaC } from '../../../../src/eac/OpenStarEaC.ts';
+import { OpenStarWebState } from '../../../../src/state/OpenStarWebState.ts';
 
 export const IsIsland = true;
 
@@ -34,7 +34,7 @@ interface DataPageData {
 }
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   DataPageData
 > = {
   GET: async (_req, ctx) => {
@@ -44,7 +44,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const eacConnections = await eacSvc.Connections<OpenBiotechEaC>({
+    const eacConnections = await eacSvc.Connections<OpenStarEaC>({
       EnterpriseLookup: ctx.State.EaC!.EnterpriseLookup!,
       Clouds: {
         [ctx.State.Cloud.CloudLookup!]: {

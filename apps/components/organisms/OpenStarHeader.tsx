@@ -5,12 +5,12 @@ import {
   Header,
   HeaderProps,
   ResponsiveSet,
-} from '@o-biotech/atomic';
+} from '@fathym/atomic';
 import ProfileMenu from '../../islands/common/ProfileMenu.tsx';
 import { SetupPhaseTypes } from '../../../src/state/SetupPhaseTypes.ts';
 import { Logo } from '../atoms/Logo.tsx';
 
-export type BiotechHeaderProps = HeaderProps & {
+export type OpenStarHeaderProps = HeaderProps & {
   currentUrl: URL;
 
   hasApis: boolean;
@@ -22,7 +22,7 @@ export type BiotechHeaderProps = HeaderProps & {
   username: string;
 };
 
-export function BiotechHeader(props: BiotechHeaderProps) {
+export function OpenStarHeader(props: OpenStarHeaderProps) {
   const active = <span class='bg-slate-700 bg-opacity-80 text-white shadow-inner'></span>;
 
   return (

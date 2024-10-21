@@ -1,13 +1,13 @@
 import { merge } from '@fathym/common';
 import { UserEaCRecord } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import { BasicLayout } from '@o-biotech/atomic';
-import { BiotechHeader } from '../components/organisms/BiotechHeader.tsx';
-import { BiotechFooter } from '../components/organisms/BiotechFooter.tsx';
+import { BasicLayout } from '@fathym/atomic';
+import { OpenStarHeader } from '../components/organisms/OpenStarHeader.tsx';
+import { OpenStarFooter } from '../components/organisms/OpenStarFooter.tsx';
 import SideBar from '../islands/molecules/SideBar.tsx';
-import { loadOoenBiotechSideBarMenuItems } from '../../src/eac/loadOpenBiotechSideBarMenuItems.tsx';
-import { OpenBiotechEaC } from '../../src/eac/OpenBiotechEaC.ts';
-import { OpenBiotechWebState } from '../../src/state/OpenBiotechWebState.ts';
+import { loadOpenStarSideBarMenuItems } from '../../src/eac/loadOpenStarSideBarMenuItems.tsx';
+import { OpenStarEaC } from '../../src/eac/OpenStarEaC.ts';
+import { OpenStarWebState } from '../../src/state/OpenStarWebState.ts';
 import { SetupPhaseTypes } from '../../src/state/SetupPhaseTypes.ts';
 import { CloudPhaseTypes } from '../../src/state/CloudPhaseTypes.ts';
 import { DataPhaseTypes } from '../../src/state/DataPhaseTypes.ts';
@@ -24,7 +24,7 @@ interface MainLayoutData {
 
   DevicesPhase?: DevicesPhaseTypes;
 
-  EaC?: OpenBiotechEaC;
+  EaC?: OpenStarEaC;
 
   Phase: SetupPhaseTypes;
 
@@ -36,7 +36,7 @@ interface MainLayoutData {
 }
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   MainLayoutData
 > = {
   GET: (req, ctx) => {
@@ -64,7 +64,7 @@ export default function MainLayout({
   Component,
   Revision,
 }: PageProps<MainLayoutData>) {
-  const menuItems = loadOoenBiotechSideBarMenuItems(Data.Phase, Data.EaC);
+  const menuItems = loadOpenStarSideBarMenuItems(Data.Phase, Data.EaC);
 
   return (
     <html>
@@ -72,22 +72,22 @@ export default function MainLayout({
         <meta charset='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-        <title>Open Biotech</title>
+        <title>Open *</title>
 
         <link
           rel='shortcut icon'
           type='image/png'
-          href='/assets/openBiotechFavicon.png'
+          href='/assets/openStarFavicon.png'
           data-eac-bypass-base
         />
         <link
           rel='icon'
-          href='/assets/openBiotechFavicon.png'
+          href='/assets/openStarFavicon.png'
           data-eac-bypass-base
         />
         <link
           rel='mask-icon'
-          href='/assets/openBiotechFavicon.png'
+          href='/assets/openStarFavicon.png'
           data-eac-bypass-base
         />
 
@@ -118,7 +118,7 @@ export default function MainLayout({
         <BasicLayout
           class='min-h-[100vh]'
           header={
-            <BiotechHeader
+            <OpenStarHeader
               class='h-[64px]'
               currentUrl={new URL(Data.CurrentURLPath)}
               setupPhase={Data.Phase}
@@ -127,7 +127,7 @@ export default function MainLayout({
               username={Data.Username}
             />
           }
-          footer={<BiotechFooter />}
+          footer={<OpenStarFooter />}
         >
           <SideBar
             class='top-[64px] left-0'

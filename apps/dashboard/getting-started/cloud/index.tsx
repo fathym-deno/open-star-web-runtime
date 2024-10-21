@@ -11,8 +11,8 @@ import { Location } from 'npm:@azure/arm-subscriptions';
 import CloudConnectHero from '../../../components/organisms/heros/CloudConnectHero.tsx';
 import CloudStepsFeatures from '../../../components/organisms/features/CloudStepsFeatures.tsx';
 import { CloudPhaseTypes } from '../../../../src/state/CloudPhaseTypes.ts';
-import { OpenBiotechEaC } from '../../../../src/eac/OpenBiotechEaC.ts';
-import { OpenBiotechWebState } from '../../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarEaC } from '../../../../src/eac/OpenStarEaC.ts';
+import { OpenStarWebState } from '../../../../src/state/OpenStarWebState.ts';
 
 interface CloudPageData {
   billingScopes: Record<string, string>;
@@ -51,7 +51,7 @@ interface CloudPageData {
 }
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   CloudPageData
 > = {
   GET: async (_req, ctx) => {
@@ -222,7 +222,7 @@ export const handler: EaCRuntimeHandlerResult<
         if (ctx.State.EaC!.SourceConnections![sourceKey]) {
           const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-          const eacConnections = await eacSvc.Connections<OpenBiotechEaC>({
+          const eacConnections = await eacSvc.Connections<OpenStarEaC>({
             EnterpriseLookup: ctx.State.EaC!.EnterpriseLookup!,
             SourceConnections: {
               [sourceKey]: {},

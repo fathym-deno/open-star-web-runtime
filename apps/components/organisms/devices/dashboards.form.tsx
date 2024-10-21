@@ -1,5 +1,5 @@
 import { JSX } from 'preact';
-import { Action, ActionGroup, classSet, Input } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet, Input } from '@fathym/atomic';
 import { callToActionStyles } from '../../styles/actions.tsx';
 
 export type DevicesDashboardFormProps = JSX.HTMLAttributes<HTMLFormElement> & {
@@ -10,7 +10,7 @@ export default function DevicesDashboardForm(props: DevicesDashboardFormProps) {
   return (
     <form
       method='post'
-      action='/api/o-biotech/eac/iot/dashboards'
+      action='/api/o/eac/iot/dashboards'
       data-eac-bypass-base
       {...props}
       class={classSet(

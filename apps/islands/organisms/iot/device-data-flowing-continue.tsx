@@ -1,4 +1,4 @@
-import { Action, ActionGroup, classSet } from '@o-biotech/atomic';
+import { Action, ActionGroup, classSet } from '@fathym/atomic';
 import DeviceDataFlowing from './device-data-flowing.tsx';
 import { callToActionStyles } from '../../../components/styles/actions.tsx';
 import { IconProps } from '@fathym/atomic-icons/browser';

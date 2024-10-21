@@ -5,7 +5,7 @@ import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
 import { IS_BROWSER } from '@fathym/eac/runtime/browser';
 import { EaCStatus, EaCStatusProcessingTypes, loadEaCSvc } from '@fathym/eac/api';
 import { intlFormatDistance } from 'npm:date-fns';
-import { OpenBiotechWebState } from '../../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarWebState } from '../../../../src/state/OpenStarWebState.ts';
 import Redirect from '../../../islands/atoms/Redirect.tsx';
 import { CheckIcon } from '../../../../build/iconset/icons/CheckIcon.tsx';
 import { ErrorIcon } from '../../../../build/iconset/icons/ErrorIcon.tsx';
@@ -24,7 +24,7 @@ interface CommitStatusPageData {
 }
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   CommitStatusPageData
 > = {
   GET: async (req, ctx) => {
@@ -123,7 +123,7 @@ export default function CommitStatus({
   useEffect(() => {
     if (IS_BROWSER) {
       const checkInterval = setInterval(() => {
-        fetch(`/api/o-biotech/eac/${Data.commitId}/status`).then(
+        fetch(`/api/o/eac/${Data.commitId}/status`).then(
           (resp: Response) => {
             resp.json().then((status) => {
               setStatus(status);

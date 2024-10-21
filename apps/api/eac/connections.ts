@@ -1,14 +1,14 @@
 import { respond } from '@fathym/common';
 import { loadEaCSvc } from '@fathym/eac/api';
 import { EaCRuntimeHandlers } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../../../src/state/OpenBiotechWebState.ts';
-import { OpenBiotechEaC } from '../../../src/eac/OpenBiotechEaC.ts';
+import { OpenStarWebState } from '../../../src/state/OpenStarWebState.ts';
+import { OpenStarEaC } from '../../../src/eac/OpenStarEaC.ts';
 
-export const handler: EaCRuntimeHandlers<OpenBiotechWebState> = {
+export const handler: EaCRuntimeHandlers<OpenStarWebState> = {
   async GET(_req, ctx) {
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const eacConnections = await eacSvc.Connections<OpenBiotechEaC>(
+    const eacConnections = await eacSvc.Connections<OpenStarEaC>(
       ctx.State.EaC!,
     );
 
@@ -16,11 +16,11 @@ export const handler: EaCRuntimeHandlers<OpenBiotechWebState> = {
   },
 
   async POST(req, ctx) {
-    const eac: OpenBiotechEaC = await req.json();
+    const eac: OpenStarEaC = await req.json();
 
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const eacConnections = await eacSvc.Connections<OpenBiotechEaC>(
+    const eacConnections = await eacSvc.Connections<OpenStarEaC>(
       eac || ctx.State.EaC!,
     );
 

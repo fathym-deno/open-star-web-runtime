@@ -1,9 +1,9 @@
 import { redirectRequest, respond } from '@fathym/common';
 import { loadEaCSvc, UserEaCRecord } from '@fathym/eac/api';
 import { EaCRuntimeHandlerResult } from '@fathym/eac/runtime';
-import { OpenBiotechWebState } from '../../../src/state/OpenBiotechWebState.ts';
+import { OpenStarWebState } from '../../../src/state/OpenStarWebState.ts';
 
-export const handler: EaCRuntimeHandlerResult<OpenBiotechWebState> = {
+export const handler: EaCRuntimeHandlerResult<OpenStarWebState> = {
   GET(_req, ctx) {
     return respond(ctx.State.EaC || {});
   },

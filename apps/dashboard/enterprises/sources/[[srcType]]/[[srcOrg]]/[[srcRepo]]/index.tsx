@@ -8,9 +8,9 @@ import {
   EaCManageSourceForm,
   Hero,
   HeroStyleTypes,
-} from '@o-biotech/atomic';
-import { OpenBiotechWebState } from '../../../../../../../src/state/OpenBiotechWebState.ts';
-import { OpenBiotechEaC } from '../../../../../../../src/eac/OpenBiotechEaC.ts';
+} from '@fathym/atomic';
+import { OpenStarWebState } from '../../../../../../../src/state/OpenStarWebState.ts';
+import { OpenStarEaC } from '../../../../../../../src/eac/OpenStarEaC.ts';
 import DeleteAction from '../../../../../../islands/molecules/DeleteAction.tsx';
 import GitHubAccessAction from '../../../../../../islands/molecules/GitHubAccessAction.tsx';
 
@@ -33,7 +33,7 @@ export type EaCSourcesPageData = {
 };
 
 export const handler: EaCRuntimeHandlerResult<
-  OpenBiotechWebState,
+  OpenStarWebState,
   EaCSourcesPageData
 > = {
   async GET(_, ctx) {
@@ -67,7 +67,7 @@ export const handler: EaCRuntimeHandlerResult<
       if (ctx.State.EaC!.SourceConnections![sourceKey]) {
         const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-        const eacConnections = await eacSvc.Connections<OpenBiotechEaC>({
+        const eacConnections = await eacSvc.Connections<OpenStarEaC>({
           EnterpriseLookup: ctx.State.EaC!.EnterpriseLookup!,
           SourceConnections: {
             [sourceKey]: {},
@@ -115,7 +115,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const srcLookup = (formData.get('srcLookup') as string) || `GITHUB://${org}/${repo}`;
 
-    const saveEaC: OpenBiotechEaC = {
+    const saveEaC: OpenStarEaC = {
       EnterpriseLookup: formData.get('entLookup') as string,
       Sources: {
         [srcLookup]: {
@@ -135,7 +135,7 @@ export const handler: EaCRuntimeHandlerResult<
 
     const eacSvc = await loadEaCSvc(ctx.State.EaCJWT!);
 
-    const commitResp = await eacSvc.Commit<OpenBiotechEaC>(saveEaC, 60);
+    const commitResp = await eacSvc.Commit<OpenStarEaC>(saveEaC, 60);
 
     const status = await waitForStatus(
       eacSvc,

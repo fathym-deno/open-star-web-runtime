@@ -1,4 +1,4 @@
-import { DisplayStyleTypes, Hero, HeroProps, HeroStyleTypes } from '@o-biotech/atomic';
+import { DisplayStyleTypes, Hero, HeroProps, HeroStyleTypes } from '@fathym/atomic';
 
 export type CreateEaCHeroProps = HeroProps;
 

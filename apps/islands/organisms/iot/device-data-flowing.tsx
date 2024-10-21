@@ -2,7 +2,7 @@
 import { ComponentChildren } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { IS_BROWSER } from '@fathym/eac/runtime/browser';
-import { classSet } from '@o-biotech/atomic';
+import { classSet } from '@fathym/atomic';
 import { IconProps } from '@fathym/atomic-icons/browser';
 import { RenewIcon } from '../../../../build/iconset/icons/RenewIcon.tsx';
 
@@ -37,7 +37,7 @@ export default function DeviceDataFlowing(props: DeviceDataFlowingProps) {
 
   useEffect(() => {
     const checkForDeviceData = async (): Promise<boolean> => {
-      const dataUrl = `${location.origin}/api/o-biotech/data/warm/explorer`;
+      const dataUrl = `${location.origin}/api/o/data/warm/explorer`;
 
       const response = await fetch(dataUrl, {
         headers: {
